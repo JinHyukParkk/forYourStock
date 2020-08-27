@@ -5,5 +5,6 @@ import (
 )
 
 func Start() {
+	// api.GiveCompanyList()
 	api.GiveList()
 }

@@ -27,10 +27,3 @@ func GiveCompanyList() {
 	fmt.Printf("wrote %d bytes\n", n)
 	w.Flush()
 }
-
-
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
