@@ -1,5 +1,5 @@
 #!/bin/sh
 
-source ../.config
+source .config
 
-go run ../main.go
+go run main.go
