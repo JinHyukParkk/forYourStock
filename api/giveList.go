@@ -6,17 +6,6 @@ import (
 	"io/ioutil"
 )
 
-type myCloser interface {
-	Close() error
-}
-
-// closeFile is a helper function which streamlines closing
-// with error checking on different file types.
-func closeFile(f myCloser) {
-	err := f.Close()
-	check(err)
-}
-
 // readAll is a wrapper function for ioutil.ReadAll. It accepts a zip.File as
 // its parameter, opens it, reads its content and returns it as a byte slice.
 func readAll(file *zip.File) []byte {
@@ -30,14 +19,6 @@ func readAll(file *zip.File) []byte {
 	return content
 }
 
-// check is a helper function which streamlines error checking
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
-
 func GiveList() {
 	zipFile := "list.zip"
 
@@ -50,3 +31,6 @@ func GiveList() {
 		fmt.Printf("%s\n\n", readAll(file)) // file content
 	}
 }
+/*
+뽑아보니깐 .. 상장하지 않는 회사들도 많네 ..ㅠ 
+*/
