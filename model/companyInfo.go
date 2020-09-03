@@ -1,5 +1,6 @@
 package model
 
+// json 형식
 type CompanyListStruct struct {
 	CompanyList	[]CompanyStruct	`json:"company"`
 }
@@ -9,6 +10,8 @@ type CompanyStruct struct {
 	Code	string	`json:"code"`
  }
 
+
+ // xml 형식
  type CompanyXmlResult struct {
 	 Result []CompanyXmlList `xml:"result"`
  }
