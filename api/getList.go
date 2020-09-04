@@ -3,17 +3,18 @@ package api
 import (
 	"archive/zip"
 	"io/ioutil"
-	"encoding/xml"
+
+	// "encoding/xml"
 	"io"
 	"os"
 	"path/filepath"
-	"forYourStock/model"
-	"fmt"
+	// "forYourStock/model"
+	// "fmt"
 )
 
 func GetList() {
 	// XML 데이터 생성
-	// createXmlData()
+	createXmlData()
 
 	// xml unmarshal
 	// 회사 리스트 불러오기
@@ -28,7 +29,7 @@ func GetList() {
 	// fmt.Println(aCompanyList)
 
 	// 파일 크기가 너무 큼 Memory 부족
-	
+
 }
 
 func getCompanyList() []byte {
@@ -53,12 +54,13 @@ func readAll(file *zip.File) []byte {
 func createXmlData() {
 	zipFile := "list.zip"
 
-	// xml 파일로 떨구기
+	// xml 파일로 떨구기  -- 파일이 너무 커서 안됨.
 	err := unzip(zipFile, "data")
 	check(err)
 }
+
 /*
-뽑아보니깐 .. 상장하지 않는 회사들도 많네 ..ㅠ 
+뽑아보니깐 .. 상장하지 않는 회사들도 많네 ..ㅠ
 */
 
 func unzip(archive, target string) error {
