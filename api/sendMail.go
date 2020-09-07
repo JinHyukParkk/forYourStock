@@ -1,11 +1,12 @@
 package api
 
 import (
+	"bytes"
 	"net/smtp"
 	"os"
 )
 
-func SendMail() {
+func SendMail(body bytes.Buffer) {
 	id := os.Getenv("GMAIL_ID")
 	pass := os.Getenv("GMAIL_PASS")
 	target := os.Getenv("TARGET_ID")
@@ -18,8 +19,7 @@ func SendMail() {
 	// 메시지 작성
 	headerSubject := "Subject: 다미야 사랑해\r\n"
 	headerBlank := "\r\n"
-	body := "테스트다"
-	msg := []byte(headerSubject + headerBlank + body)
+	msg := []byte(headerSubject + headerBlank + body.String())
 
 	err := smtp.SendMail("smtp.gmail.com:587", auth, from, to, msg)
 	check(err)
