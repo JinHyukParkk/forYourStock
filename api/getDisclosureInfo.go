@@ -62,8 +62,9 @@ func GetDisclosureInfo(data model.CompanyListStruct, key string) bytes.Buffer {
 
 			szReportUrl := url.String()
 			szReturn.WriteString("############################# ")
+			szReturn.WriteString("\n")
+			szReturn.WriteString("회사명 : ")
 			szReturn.WriteString(aCompanyDisclosure.List[0].CorpName)
-			szReturn.WriteString(" #############################")
 			szReturn.WriteString("\n")
 			szReturn.WriteString("날짜 : ")
 			szReturn.WriteString(aCompanyDisclosure.List[0].RceptDt)
@@ -74,7 +75,7 @@ func GetDisclosureInfo(data model.CompanyListStruct, key string) bytes.Buffer {
 			szReturn.WriteString("공시URL : ")
 			szReturn.WriteString(szReportUrl)
 			szReturn.WriteString("\n")
-			szReturn.WriteString("##########################################################")
+			szReturn.WriteString("#############################")
 			szReturn.WriteString("\n")
 			szReturn.WriteString("\n")
 		}
