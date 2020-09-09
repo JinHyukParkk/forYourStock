@@ -1,9 +1,8 @@
 package main
 
-import (
-	"forYourStock/controller"
-)
+import "forYourStock/controller"
 
 func main() {
-	controller.Start()
+	controller.StartController()
+
 }
