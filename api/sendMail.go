@@ -17,7 +17,7 @@ func SendMail(body bytes.Buffer) {
 	to := []string{target}
 
 	// 메시지 작성
-	headerSubject := "Subject: 다미야 사랑해\r\n"
+	headerSubject := "Subject: 부자 되거라\r\n"
 	headerBlank := "\r\n"
 	msg := []byte(headerSubject + headerBlank + body.String())
 

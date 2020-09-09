@@ -4,10 +4,10 @@ package model
 type CompanyDisclosure struct {
 	Status    string       `json:"status"`
 	Message   string       `json:"message"`
-	PageNo    string       `json:"page_no"`
-	PageCnt   string       `json:"page_count"`
-	TotalCnt  string       `json:"total_count"`
-	TotalPage string       `json:"total_page"`
+	PageNo    int64        `json:"page_no"`
+	PageCnt   int64        `json:"page_count"`
+	TotalCnt  int64        `json:"total_count"`
+	TotalPage int64        `json:"total_page"`
 	List      []Disclosure `json:"list"`
 }
 
