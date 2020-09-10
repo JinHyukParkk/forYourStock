@@ -10,7 +10,7 @@
  export APIKEY=[API 인증키]
  export GMAIL_ID=[본인 GMAIL ID]
  export GAMIL_PASS=[본인 GMAIL PASS]
- expoer TARGET_ID[대상 이메일]
+ expoer TARGET_ID=[대상 이메일]
 ```
 
 
