@@ -19,7 +19,7 @@ func SendMail(body bytes.Buffer) {
 	from := "dami@love.com"
 	to := []string{target}
 
-	aSubject := []string{"경철아.. 나 다미인데", "부자 되거라", "오늘의 투자종목은?!!", "믿으셔야합니다.", "차 바꾸실 때 되셨죠?", "정석이 테슬라 개꿀맛"}
+	aSubject := []string{"상 먹자", "부자 되거라", "오늘의 투자종목은?!!", "믿으셔야합니다.", "차 바꾸실 때 되셨죠?", "정석이 테슬라 개꿀맛"}
 	timeSource := rand.NewSource(time.Now().UnixNano())
 	random := rand.New(timeSource)
 	nRand := random.Intn(100)
