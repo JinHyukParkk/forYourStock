@@ -9,10 +9,11 @@ import (
 	"os"
 	"path/filepath"
 	// "forYourStock/model"
-	// "fmt"
+	"fmt"
 )
 
 func GetList() {
+	fmt.Println("Exec Get")
 	// XML 데이터 생성
 	createXmlData()
 
