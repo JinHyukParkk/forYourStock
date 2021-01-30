@@ -11,7 +11,8 @@ import (
 
 //Scrapper function
 func Scrapper(code string) {
-	var baseURL string = "https://finance.naver.com/item/main.nhn?code=" + code
+	// var baseURL string = "https://finance.naver.com/item/frgn.nhn?code=" + code
+	var baseURL string = "https://taepseon.tistory.com/116"
 
 	fmt.Println(baseURL)
 	res, err := http.Get(baseURL)
