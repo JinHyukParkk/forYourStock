@@ -2,6 +2,7 @@ package crawling
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 
 	"forYourStock/libs/common"
@@ -11,8 +12,7 @@ import (
 
 //Scrapper function
 func Scrapper(code string) {
-	// var baseURL string = "https://finance.naver.com/item/frgn.nhn?code=" + code
-	var baseURL string = "https://taepseon.tistory.com/116"
+	var baseURL string = "https://finance.naver.com/item/frgn.nhn?code=" + code
 
 	fmt.Println(baseURL)
 	res, err := http.Get(baseURL)
@@ -20,8 +20,10 @@ func Scrapper(code string) {
 	common.CheckCode(res)
 
 	defer res.Body.Close()
+	body, err := ioutil.ReadAll(res.Body)
+	strBody := string(body)
 
-	fmt.Println(res.Body)
+	fmt.Println(strBody)
 
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	common.CheckErr(err)
