@@ -12,7 +12,7 @@ import (
 
 //Scrapper function
 func Scrapper(code string) {
-	var baseURL string = "https://finance.naver.com/item/frgn.nhn?code=" + code
+	var baseURL string = "https://finance.naver.com/item/main.nhn?code=" + code
 
 	fmt.Println(baseURL)
 	res, err := http.Get(baseURL)
@@ -24,12 +24,12 @@ func Scrapper(code string) {
 	strBody := string(body)
 
 	fmt.Println(strBody)
-
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	common.CheckErr(err)
 
-	doc.Find(".tah p11 nv01").Each(func(i int, s *goquery.Selection) {
-		fmt.Println(s.Text())
+	doc.Find(".invest_trend").Each(func(i int, s *goquery.Selection) {
+		fmt.Println(i)
+		fmt.Println(s.Find("em").Text())
 	})
 
 	fmt.Println("Done")
