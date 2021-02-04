@@ -23,7 +23,6 @@ func Scrapper(code string) {
 	body, err := ioutil.ReadAll(res.Body)
 	strBody := string(body)
 
-	fmt.Println(strBody)
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	common.CheckErr(err)
 
